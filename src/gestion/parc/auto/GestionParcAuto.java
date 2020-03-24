@@ -5,10 +5,7 @@
  */
 package gestion.parc.auto;
 
-/**
- *
- * @author POSTE
- */
+ import java.awt.GradientPaint;
 public class GestionParcAuto {
 
     /**
