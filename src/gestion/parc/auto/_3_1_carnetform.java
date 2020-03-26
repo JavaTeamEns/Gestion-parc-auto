@@ -337,6 +337,7 @@ public class _3_1_carnetform extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(_3_1_carnetform.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
