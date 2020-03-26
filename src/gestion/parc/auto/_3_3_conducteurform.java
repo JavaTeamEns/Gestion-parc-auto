@@ -5,6 +5,7 @@
  */
 package gestion.parc.auto;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -12,12 +13,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author len
  */
-public class conducteur extends javax.swing.JFrame {
+public class _3_3_conducteurform extends javax.swing.JFrame {
 
     /**
      * Creates new form conducteur
      */
-    public conducteur() {
+    ArrayList<_3_3_conducteur> conds = new ArrayList<_3_3_conducteur>();
+    DefaultTableModel modele;
+    public _3_3_conducteurform() {
         initComponents();
     }
 
@@ -271,14 +274,7 @@ public class conducteur extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
-        String id = idField.getText();
-        String nom = nomField.getText();
-        String prenom = prenomField.getText();
-        String tel = telField.getText();
-        String date = dateField.getText();
-        
-        DefaultTableModel model = (DefaultTableModel)condTable.getModel();
-        model.addRow(new Object[]{id, nom, prenom, tel, date});
+       ajouterCond();
         
     }//GEN-LAST:event_addButtonActionPerformed
 
@@ -288,33 +284,12 @@ public class conducteur extends javax.swing.JFrame {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)condTable.getModel();
-        int rowIndex = condTable.getSelectedRow();
-        model.removeRow(rowIndex);
+        supprimerCond();
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)condTable.getModel();
-        int rowIndex = condTable.getSelectedRow();
-        
-        String id = model.getValueAt(rowIndex, 0).toString();
-        String nom = model.getValueAt(rowIndex, 1).toString();
-        String prenom = model.getValueAt(rowIndex, 2).toString();
-        String tel = model.getValueAt(rowIndex, 3).toString();
-        String date = model.getValueAt(rowIndex, 4).toString();
-        
-        String nId = JOptionPane.showInputDialog(null,"Entrer le nouveau id",id);
-        String nNom = JOptionPane.showInputDialog(null,"Entrer le nouveau nom",nom);
-        String nPrenom = JOptionPane.showInputDialog(null,"Entrer le nouveau prenom",prenom);
-        String nTel = JOptionPane.showInputDialog(null,"Entrer le nouveau tel",tel);
-        String nDate = JOptionPane.showInputDialog(null,"Entrer la nouvelle date",date);
-        
-        model.setValueAt(nId, rowIndex, 0);
-        model.setValueAt(nNom, rowIndex, 1);
-        model.setValueAt(nPrenom, rowIndex, 2);
-        model.setValueAt(nTel, rowIndex, 3);
-        model.setValueAt(nDate, rowIndex, 4);
+        modiferCond();
     }//GEN-LAST:event_modifyButtonActionPerformed
 
     /**
@@ -334,20 +309,21 @@ public class conducteur extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(conducteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(_3_3_conducteurform.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(conducteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(_3_3_conducteurform.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(conducteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(_3_3_conducteurform.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(conducteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(_3_3_conducteurform.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new conducteur().setVisible(true);
+                new _3_3_conducteurform().setVisible(true);
             }
         });
     }
@@ -371,4 +347,55 @@ public class conducteur extends javax.swing.JFrame {
     private javax.swing.JLabel prenomLabel;
     private javax.swing.JTextField telField;
     // End of variables declaration//GEN-END:variables
+
+    private void ajouterCond() {
+        Boolean ajout = true;
+        modele = (DefaultTableModel)condTable.getModel();
+        if(idField.getText().equals("")||nomField.getText().equals("")||prenomField.getText().equals("")||telField.getText().equals("")||dateField.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "remplissez tout les champs ","champ vide",JOptionPane.ERROR_MESSAGE);
+            ajout = false;
+        }
+        if(ajout){
+            _3_3_conducteur cond = new _3_3_conducteur(nomField.getText(),prenomField.getText(),telField.getText(),dateField.getText());
+            conds.add(cond);
+            modele.addRow(new Object[] {cond.getId(),cond.getNom(),cond.getPrennom(),cond.getTel(),cond.getDate()});
+            viderChamp();
+        }
+    }
+
+    private void viderChamp() {
+        nomField.setText("");
+        prenomField.setText("");
+        telField.setText("");
+        dateField.setText("");
+    }
+
+    private void modiferCond() {
+        modele = (DefaultTableModel)condTable.getModel();
+        int ligne = condTable.getSelectedRow();
+        if(ligne!=-1){
+            modele.setValueAt(nomField.getText(), ligne,1);
+            modele.setValueAt(prenomField.getText(), ligne,2);
+            modele.setValueAt(telField.getText(), ligne,3);
+            modele.setValueAt(dateField.getText(), ligne,4);
+            
+            conds.get(ligne).setNom(nomField.getText());   
+            conds.get(ligne).setPrenom(prenomField.getText());
+            conds.get(ligne).setTel(telField.getText());
+            conds.get(ligne).setDate(dateField.getText());
+        }
+    }
+
+    private void supprimerCond() {
+        modele = (DefaultTableModel)condTable.getModel();
+        int ligne = condTable.getSelectedRow();
+        if(ligne!=-1){
+            
+            
+            conds.remove(ligne);
+            modele.removeRow(ligne);
+            
+            viderChamp();
+        }
+    }
 }
