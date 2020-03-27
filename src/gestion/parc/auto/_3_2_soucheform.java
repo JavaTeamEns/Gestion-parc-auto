@@ -38,6 +38,7 @@ public class _3_2_soucheform extends javax.swing.JFrame {
         labelDebSerie = new javax.swing.JLabel();
         labelFinSerie = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        homeButton = new javax.swing.JButton();
         id_soucheTextField = new javax.swing.JTextField();
         villeTextField = new javax.swing.JTextField();
         btn_modifier_souche = new javax.swing.JButton();
@@ -86,15 +87,27 @@ public class _3_2_soucheform extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(59, 239, 170));
 
+        homeButton.setBackground(new java.awt.Color(255, 255, 255));
+        homeButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        homeButton.setText("Home");
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 35, Short.MAX_VALUE)
+            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
         id_soucheTextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -237,7 +250,7 @@ public class _3_2_soucheform extends javax.swing.JFrame {
                         .addComponent(prixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(qteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(labelDebSerie1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bnt_ajouter_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_modifier_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,7 +291,7 @@ private void modifier_souche() {
              souches.get(ligne).setVille(villeTextField.getText());
              souches.get(ligne).setQuantite(Double.valueOf(qteTextField.getText()));
              souches.get(ligne).setPrix(Double.valueOf(prixTextField.getText()));
-             JOptionPane.showMessageDialog(this, "Souche bien modifier");
+             JOptionPane.showMessageDialog(this, "Souche bien modifiée");
         }
     }
     private void bnt_ajouter_soucheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_ajouter_soucheActionPerformed
@@ -315,6 +328,14 @@ private void modifier_souche() {
          qteTextField.setText(modele.getValueAt(Tablesouche.getSelectedRow(), 4).toString());
           prixTextField.setText(modele.getValueAt(Tablesouche.getSelectedRow(), 5).toString());
     }//GEN-LAST:event_TablesoucheMouseClicked
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        home c = new home();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_homeButtonActionPerformed
     private void supprimer_souche() {
         modele = (DefaultTableModel)Tablesouche.getModel();
         int ligne = Tablesouche.getSelectedRow();
@@ -371,6 +392,7 @@ private void modifier_souche() {
     private javax.swing.JButton btn_modifier_souche;
     private javax.swing.JButton btn_supprimer_souche;
     private javax.swing.JComboBox conducteurcombo;
+    private javax.swing.JButton homeButton;
     private javax.swing.JTextField id_soucheTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

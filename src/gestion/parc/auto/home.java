@@ -30,10 +30,10 @@ public class home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        carnetButton = new javax.swing.JButton();
+        soucheButton = new javax.swing.JButton();
         condButton = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        missionButton = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
@@ -66,18 +66,23 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setBackground(new java.awt.Color(59, 239, 170));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Carnet");
-
-        jButton2.setBackground(new java.awt.Color(59, 239, 170));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Souche");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        carnetButton.setBackground(new java.awt.Color(59, 239, 170));
+        carnetButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        carnetButton.setForeground(new java.awt.Color(0, 0, 0));
+        carnetButton.setText("Carnet");
+        carnetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                carnetButtonActionPerformed(evt);
+            }
+        });
+
+        soucheButton.setBackground(new java.awt.Color(59, 239, 170));
+        soucheButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        soucheButton.setForeground(new java.awt.Color(0, 0, 0));
+        soucheButton.setText("Souche");
+        soucheButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soucheButtonActionPerformed(evt);
             }
         });
 
@@ -96,10 +101,15 @@ public class home extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(59, 239, 170));
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Mission");
+        missionButton.setBackground(new java.awt.Color(59, 239, 170));
+        missionButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        missionButton.setForeground(new java.awt.Color(0, 0, 0));
+        missionButton.setText("Mission");
+        missionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                missionButtonActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(59, 239, 170));
         jButton5.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
@@ -124,12 +134,12 @@ public class home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(carnetButton, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addComponent(missionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(81, 81, 81)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(soucheButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,14 +152,14 @@ public class home extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(carnetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soucheButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(condButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(missionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(177, Short.MAX_VALUE))
         );
 
@@ -175,17 +185,40 @@ public class home extends javax.swing.JFrame {
     private void condButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_condButtonActionPerformed
         // TODO add your handling code here:
         _3_3_conducteurform c = new _3_3_conducteurform();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
         c.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_condButtonActionPerformed
 
     private void condButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_condButtonMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
     }//GEN-LAST:event_condButtonMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void soucheButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soucheButtonActionPerformed
+        _3_2_soucheform c = new _3_2_soucheform();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_soucheButtonActionPerformed
+
+    private void carnetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carnetButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        _3_1_carnetform c = new _3_1_carnetform();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_carnetButtonActionPerformed
+
+    private void missionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missionButtonActionPerformed
+        _3_4_missionform c = new _3_4_missionform();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_missionButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,20 +250,23 @@ public class home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new home().setVisible(true);
+               home Home =  new home();
+               Home.setResizable(false);
+               Home.setLocationRelativeTo(null);
+               Home.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton carnetButton;
     private javax.swing.JButton condButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton missionButton;
+    private javax.swing.JButton soucheButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,13 +47,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton1" pref="108" max="32767" attributes="0"/>
-                      <Component id="jButton4" max="32767" attributes="0"/>
+                      <Component id="carnetButton" pref="108" max="32767" attributes="0"/>
+                      <Component id="missionButton" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jButton5" pref="109" max="32767" attributes="0"/>
-                      <Component id="jButton2" max="32767" attributes="0"/>
+                      <Component id="soucheButton" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="88" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -70,15 +70,15 @@
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
+                      <Component id="carnetButton" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
+                      <Component id="soucheButton" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
                       <Component id="condButton" alignment="3" min="-2" pref="113" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jButton5" max="32767" attributes="0"/>
                       <Component id="jButton6" pref="113" max="32767" attributes="0"/>
-                      <Component id="jButton4" max="32767" attributes="0"/>
+                      <Component id="missionButton" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="177" max="32767" attributes="0"/>
               </Group>
@@ -131,7 +131,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="carnetButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="aa" green="ef" red="3b" type="rgb"/>
@@ -144,8 +144,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Carnet"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carnetButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="soucheButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="aa" green="ef" red="3b" type="rgb"/>
@@ -159,7 +162,7 @@
             <Property name="text" type="java.lang.String" value="Souche"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="soucheButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="condButton">
@@ -180,7 +183,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="condButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="missionButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="aa" green="ef" red="3b" type="rgb"/>
@@ -193,6 +196,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Mission"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="missionButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>

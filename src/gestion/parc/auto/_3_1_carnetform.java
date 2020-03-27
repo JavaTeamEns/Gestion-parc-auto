@@ -39,6 +39,7 @@ public class _3_1_carnetform extends javax.swing.JFrame {
         labelDebSerie = new javax.swing.JLabel();
         labelFinSerie = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        homeButton = new javax.swing.JButton();
         idTextField = new javax.swing.JTextField();
         DebutSerieTextField = new javax.swing.JTextField();
         FinSerieTextField = new javax.swing.JTextField();
@@ -83,15 +84,27 @@ public class _3_1_carnetform extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(59, 239, 170));
 
+        homeButton.setBackground(new java.awt.Color(255, 255, 255));
+        homeButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        homeButton.setText("Home");
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 35, Short.MAX_VALUE)
+            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         idTextField.setBackground(new java.awt.Color(255, 255, 255));
@@ -291,6 +304,15 @@ public class _3_1_carnetform extends javax.swing.JFrame {
         FinSerieTextField.setText(modele.getValueAt(TableCarnet.getSelectedRow(), 3).toString());
     }//GEN-LAST:event_TableCarnetMouseClicked
 
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        home c = new home();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_homeButtonActionPerformed
+
     private void viderChamps() {
          
         DebutSerieTextField.setText("");
@@ -344,7 +366,7 @@ public class _3_1_carnetform extends javax.swing.JFrame {
             public void run() {
                _3_1_carnetform carnet = new _3_1_carnetform();
                             
-                         carnet.setResizable(false);
+                        carnet.setResizable(false);
                         carnet.setLocationRelativeTo(null);
                         
                        carnet.setVisible(true);
@@ -361,6 +383,7 @@ public class _3_1_carnetform extends javax.swing.JFrame {
     private javax.swing.JButton bnt_ajouter_carnet;
     private javax.swing.JButton btn_modifier_carnet;
     private javax.swing.JButton btn_supprimer_carnet;
+    private javax.swing.JButton homeButton;
     private javax.swing.JTextField idTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -15,13 +15,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class _3_3_conducteurform extends javax.swing.JFrame {
 
-    /**
-     * Creates new form conducteur
-     */
+    
     ArrayList<_3_3_conducteur> conds = new ArrayList<_3_3_conducteur>();
     DefaultTableModel modele;
     public _3_3_conducteurform() {
         initComponents();
+        this.setTitle("Gestion des conducteurs");
     }
 
     /**
@@ -35,6 +34,7 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        homeButton = new javax.swing.JButton();
         idLabel = new javax.swing.JLabel();
         idField = new javax.swing.JTextField();
         nomLabel = new javax.swing.JLabel();
@@ -57,15 +57,27 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(59, 239, 170));
 
+        homeButton.setBackground(new java.awt.Color(255, 255, 255));
+        homeButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        homeButton.setText("Home");
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
+            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
         idLabel.setBackground(new java.awt.Color(59, 239, 170));
@@ -148,6 +160,11 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        condTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                condTableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(condTable);
@@ -292,6 +309,25 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
         modiferCond();
     }//GEN-LAST:event_modifyButtonActionPerformed
 
+    private void condTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_condTableMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel modele = (DefaultTableModel) condTable.getModel();
+        
+        nomField.setText((String) modele.getValueAt(condTable.getSelectedRow(), 1));
+        prenomField.setText((String) modele.getValueAt(condTable.getSelectedRow(), 2));
+        telField.setText((String) modele.getValueAt(condTable.getSelectedRow(), 3));
+        dateField.setText((String) modele.getValueAt(condTable.getSelectedRow(), 4));
+    }//GEN-LAST:event_condTableMouseClicked
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        // TODO add your handling code here:
+        home c = new home();
+        c.setResizable(false);
+        c.setLocationRelativeTo(null);
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_homeButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,7 +359,11 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new _3_3_conducteurform().setVisible(true);
+                _3_3_conducteurform cond = new _3_3_conducteurform();
+                cond.setResizable(false);
+                cond.setLocationRelativeTo(null);
+                cond.setVisible(true);
+                
             }
         });
     }
@@ -333,6 +373,7 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
     private javax.swing.JTable condTable;
     private javax.swing.JTextField dateField;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JButton homeButton;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel1;
@@ -383,6 +424,7 @@ public class _3_3_conducteurform extends javax.swing.JFrame {
             conds.get(ligne).setPrenom(prenomField.getText());
             conds.get(ligne).setTel(telField.getText());
             conds.get(ligne).setDate(dateField.getText());
+            JOptionPane.showMessageDialog(this, "ligne bien modifiée");
         }
     }
 
