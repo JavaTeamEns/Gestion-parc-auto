@@ -89,6 +89,11 @@ public class _3_2_soucheform extends javax.swing.JFrame {
         exitButton.setBackground(new java.awt.Color(255, 255, 255));
         exitButton.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         exitButton.setText("Quitter");
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+        });
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
@@ -113,11 +118,11 @@ public class _3_2_soucheform extends javax.swing.JFrame {
         );
 
         id_soucheTextField.setBackground(new java.awt.Color(255, 255, 255));
-        id_soucheTextField.setForeground(new java.awt.Color(59, 239, 170));
+        id_soucheTextField.setForeground(new java.awt.Color(0, 0, 0));
         id_soucheTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 63, 65), 2, true));
 
         villeTextField.setBackground(new java.awt.Color(255, 255, 255));
-        villeTextField.setForeground(new java.awt.Color(59, 239, 170));
+        villeTextField.setForeground(new java.awt.Color(0, 0, 0));
         villeTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 63, 65), 2));
 
         btn_modifier_souche.setBackground(new java.awt.Color(59, 239, 170));
@@ -173,7 +178,7 @@ public class _3_2_soucheform extends javax.swing.JFrame {
             }
         });
 
-        matriculecombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        matriculecombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mat1", "mat2" }));
 
         labelid1.setBackground(new java.awt.Color(59, 239, 170));
         labelid1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -183,11 +188,11 @@ public class _3_2_soucheform extends javax.swing.JFrame {
         labelid1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(59, 239, 170), null));
 
         prixTextField.setBackground(new java.awt.Color(255, 255, 255));
-        prixTextField.setForeground(new java.awt.Color(59, 239, 170));
+        prixTextField.setForeground(new java.awt.Color(0, 0, 0));
         prixTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 63, 65), 2));
 
         qteTextField.setBackground(new java.awt.Color(255, 255, 255));
-        qteTextField.setForeground(new java.awt.Color(59, 239, 170));
+        qteTextField.setForeground(new java.awt.Color(0, 0, 0));
         qteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 63, 65), 2));
 
         labelDebSerie1.setBackground(new java.awt.Color(59, 239, 170));
@@ -197,7 +202,7 @@ public class _3_2_soucheform extends javax.swing.JFrame {
         labelDebSerie1.setAlignmentX(0.5F);
         labelDebSerie1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(59, 239, 170), null));
 
-        conducteurcombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        conducteurcombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mohamed", "ali", "houda" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,11 +234,11 @@ public class _3_2_soucheform extends javax.swing.JFrame {
                     .addComponent(conducteurcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addGap(150, 150, 150)
                 .addComponent(bnt_ajouter_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(123, 123, 123)
+                .addGap(122, 122, 122)
                 .addComponent(btn_modifier_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
+                .addGap(135, 135, 135)
                 .addComponent(btn_supprimer_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 184, Short.MAX_VALUE))
         );
@@ -260,13 +265,13 @@ public class _3_2_soucheform extends javax.swing.JFrame {
                         .addComponent(prixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(qteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(labelDebSerie1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bnt_ajouter_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_modifier_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_supprimer_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_supprimer_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bnt_ajouter_souche, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,6 +307,7 @@ private void modifier_souche() {
             souches.get(ligne).setQuantite(Double.valueOf(qteTextField.getText()));
             souches.get(ligne).setPrix(Double.valueOf(prixTextField.getText()));
             JOptionPane.showMessageDialog(this, "Souche bien modifiée");
+             viderChamps();
         }
     }
     private void bnt_ajouter_soucheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_ajouter_soucheActionPerformed
@@ -350,6 +356,10 @@ private void modifier_souche() {
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitButtonMouseClicked
     private void supprimer_souche() {
         modele = (DefaultTableModel)Tablesouche.getModel();
         int ligne = Tablesouche.getSelectedRow();

@@ -281,8 +281,8 @@ public class _3_5_vehiculeform extends javax.swing.JFrame {
                     .addComponent(modifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -411,6 +411,7 @@ public class _3_5_vehiculeform extends javax.swing.JFrame {
             vehicules.add(vehicule);
             modele.addRow(new Object [] {vehicule.getMatricule(),vehicule.getCar(),vehicule.getKilo(),vehicule.getMod(),vehicule.getSeuil(),vehicule.getVid()});
             viderChamp();
+            JOptionPane.showMessageDialog(this, "ligne bien ajouter");
         }
     }
 

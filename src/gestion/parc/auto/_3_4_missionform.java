@@ -100,7 +100,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
         jLabel1.setText("Conducteur");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(59, 239, 170), null));
 
-        condCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        condCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "amine", "houda", "karim" }));
 
         matriculeLabel.setBackground(new java.awt.Color(59, 239, 170));
         matriculeLabel.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
@@ -108,7 +108,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
         matriculeLabel.setText("Matricule");
         matriculeLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(59, 239, 170), null));
 
-        matriculeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        matriculeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mat 1", "mat 2" }));
 
         localDLabel.setBackground(new java.awt.Color(59, 239, 170));
         localDLabel.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
@@ -249,8 +249,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(dateDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dateDField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(dateDField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -287,8 +286,8 @@ public class _3_4_missionform extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -408,7 +407,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
     private void ajouterMission() {
         Boolean ajout = true;
         modele = (DefaultTableModel)missionTable.getModel();
-        if(idField.getText().equals("")||condCombo.getSelectedItem().equals("")||matriculeCombo.getSelectedItem().equals("")||localDField.getText().equals("")||localAField.getText().equals("")||dateDField.getText().equals("")||dateAField.getText().equals("")){
+        if(condCombo.getSelectedItem().equals("")||matriculeCombo.getSelectedItem().equals("")||localDField.getText().equals("")||localAField.getText().equals("")||dateDField.getText().equals("")||dateAField.getText().equals("")){
             JOptionPane.showMessageDialog(this, "remplissez tout les champs ","champ vide",JOptionPane.ERROR_MESSAGE);
             ajout = false;
         }
@@ -417,6 +416,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
             missions.add(miss);
             modele.addRow(new Object [] {miss.getId(),miss.getCond(),miss.getMatricule(),miss.getLocalD(),miss.getLocalA(),miss.getDateD(),miss.getDateA()});
             viderChamp();
+            JOptionPane.showMessageDialog(this, "ligne bien ajouter");
         }
     }
 
@@ -445,6 +445,7 @@ public class _3_4_missionform extends javax.swing.JFrame {
             missions.get(ligne).setDateD(dateDField.getText());
             missions.get(ligne).setDateA(dateAField.getText());
             JOptionPane.showMessageDialog(this, "mission bien modifiée");
+             viderChamp();
         }
     }
 
