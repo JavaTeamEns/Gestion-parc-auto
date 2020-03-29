@@ -125,8 +125,13 @@ public class _3_1_carnetform extends javax.swing.JFrame {
         );
 
         idTextField.setBackground(new java.awt.Color(255, 255, 255));
-        idTextField.setForeground(new java.awt.Color(59, 239, 170));
+        idTextField.setForeground(new java.awt.Color(0, 0, 0));
         idTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 63, 65), 2, true));
+        idTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idTextFieldActionPerformed(evt);
+            }
+        });
 
         DebutSerieTextField.setBackground(new java.awt.Color(255, 255, 255));
         DebutSerieTextField.setForeground(new java.awt.Color(0, 0, 0));
@@ -336,6 +341,10 @@ public class _3_1_carnetform extends javax.swing.JFrame {
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void idTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idTextFieldActionPerformed
  
     private void viderChamps() {
          
