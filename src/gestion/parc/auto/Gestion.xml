@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\len\Documents\GitHub\Gestion-parc-auto\dist\gestion-parc-auto.jar</jar>
-  <outfile>C:\Users\len\Documents\GitHub\Gestion-parc-auto\src\gestion\parc\auto\Gestion.exe</outfile>
+  <outfile>C:\Users\len\Documents\GitHub\Gestion-parc-auto\Gestion.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>

@@ -1,0 +1,7 @@
+Bienvenue dans l'application Gestion Parc Auto réalisé par: ELAMRI Maryem et JMARI Mohamed Saad.
+Ce document est un guide d'utilisation de l'application.
+
+1) le fichier Gestion.exe pour lancer l'application.
+2) username: admin
+   password: root
+3) les champs "Debut serie","Fin serie","Prix","Quantite", requièrent des données de type numerique.

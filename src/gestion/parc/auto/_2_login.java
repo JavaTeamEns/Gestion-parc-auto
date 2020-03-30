@@ -21,11 +21,11 @@ public class _2_login extends javax.swing.JFrame {
         user = new keeptoo.KGradientPanel();
         login = new javax.swing.JButton();
         pswd = new javax.swing.JLabel();
-        pswdfield = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         userfield = new javax.swing.JTextField();
         close1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        pswdfield = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -71,16 +71,16 @@ public class _2_login extends javax.swing.JFrame {
                     .addComponent(pswd)
                     .addComponent(jLabel2))
                 .addGap(51, 51, 51)
-                .addGroup(userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(userfield, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pswdfield, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 118, Short.MAX_VALUE))
+                .addGroup(userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(userfield, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                    .addComponent(pswdfield, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(userLayout.createSequentialGroup()
                 .addGap(225, 225, 225)
                 .addComponent(close1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -97,8 +97,8 @@ public class _2_login extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(62, 62, 62)
                 .addGroup(userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pswdfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pswd))
+                    .addComponent(pswd)
+                    .addComponent(pswdfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(close1)
@@ -204,7 +204,7 @@ public class _2_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton login;
     private javax.swing.JLabel pswd;
-    private javax.swing.JTextField pswdfield;
+    private javax.swing.JPasswordField pswdfield;
     private keeptoo.KGradientPanel user;
     private javax.swing.JTextField userfield;
     // End of variables declaration//GEN-END:variables
